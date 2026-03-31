@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comercializadora Totus Tuus - Accesorios y Artículos Variados</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f4f8;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(135deg, #1e3a8a 0%, #0d9488 100%);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+header p {
+  font-size: 1.3em;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  padding: 18px 35px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+.section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 2.2em;
+  margin-bottom: 50px;
+  color: #1e3a8a;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section h2:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #1e3a8a, #0d9488);
+  border-radius: 2px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #1e3a8a;
+}
+
+.card p {
+  line-height: 1.6;
+  color: #555;
+  font-size: 1em;
+}
+
+.emoji {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.product-item {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-left: 5px solid #0d9488;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  border-left-color: #10b981;
+}
+
+.product-item:before {
+  content: '✓ ';
+  color: #10b981;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-right: 8px;
+}
+
+.product-title {
+  color: #1e3a8a;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.category-title {
+  color: #1e3a8a;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #0d9488;
+}
+
+.why-us {
+  background: linear-gradient(135deg, #1e3a8a 0%, #0d9488 100%);
+  color: white;
+  padding: 50px;
+  border-radius: 12px;
+  margin: 40px 0;
+}
+
+.why-us h3 {
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 30px;
+}
+
+.why-us-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.why-us-item {
+  text-align: center;
+}
+
+.why-us-item h4 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.testimonials {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  border-top: 5px solid #0d9488;
+}
+
+.testimonial-item {
+  font-style: italic;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border-left: 4px solid #10b981;
+  margin-bottom: 20px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.testimonial-item:last-child {
+  margin-bottom: 0;
+}
+
+.cta-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #1e3a8a 0%, #0d9488 100%);
+  color: white;
+}
+
+.cta-section h2 {
+  color: white;
+  font-size: 2.2em;
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+footer {
+  background: #1a1a1a;
+  color: #ccc;
+  text-align: center;
+  padding: 30px 20px;
+  border-top: 3px solid #0d9488;
+}
+
+footer p {
+  margin: 10px 0;
+}
+
+.footer-contact {
+  margin-top: 15px;
+  color: #10b981;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  .section h2 {
+    font-size: 1.8em;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .why-us-content {
+    grid-template-columns: 1fr;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🛍️ Comercializadora Totus Tuus</h1>
+  <p>Gran variedad de accesorios y artículos de calidad</p>
+  <a href="https://wa.me/573127767488?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20productos" class="btn">📱 Contactar por WhatsApp</a>
+</header>
+
+<section class="section">
+  <h2>Nuestros Productos</h2>
+
+  <div class="products-grid">
+    <!-- SOMBRILLAS -->
+    <div class="category-title" style="grid-column: 1 / -1;">☂️ SOMBRILLAS Y PARAGUAS</div>
+    <div class="product-item"><span class="product-title">Sombrillas Clásicas</span></div>
+    <div class="product-item"><span class="product-title">Sombrillas Plegables</span></div>
+    <div class="product-item"><span class="product-title">Sombrillas Automáticas</span></div>
+    <div class="product-item"><span class="product-title">Sombrillas Transparentes</span></div>
+    <div class="product-item"><span class="product-title">Sombrillas de Playa</span></div>
+    <div class="product-item"><span class="product-title">Sombrillas Decorativas</span></div>
+    <div class="product-item"><span class="product-title">Sombrillas Reforzadas</span></div>
+    <div class="product-item"><span class="product-title">Sombrillas Infantiles</span></div>
+
+    <!-- CINTAS Y ADHESIVOS -->
+    <div class="category-title" style="grid-column: 1 / -1;">🎀 CINTAS Y ADHESIVOS</div>
+    <div class="product-item"><span class="product-title">Cinta Adhesiva Transparente</span></div>
+    <div class="product-item"><span class="product-title">Cinta Decorativa Estampada</span></div>
+    <div class="product-item"><span class="product-title">Cinta de Embalaje</span></div>
+    <div class="product-item"><span class="product-title">Cinta Enmascarante</span></div>
+    <div class="product-item"><span class="product-title">Cinta Aislante Eléctrica</span></div>
+    <div class="product-item"><span class="product-title">Cinta Doble Cara</span></div>
+    <div class="product-item"><span class="product-title">Cinta de Tela Resistente</span></div>
+    <div class="product-item"><span class="product-title">Cinta Reflectiva de Seguridad</span></div>
+
+    <!-- LINTERNAS E ILUMINACIÓN -->
+    <div class="category-title" style="grid-column: 1 / -1;">💡 LINTERNAS E ILUMINACIÓN</div>
+    <div class="product-item"><span class="product-title">Linternas LED Recargables</span></div>
+    <div class="product-item"><span class="product-title">Linternas de Mano Potentes</span></div>
+    <div class="product-item"><span class="product-title">Linternas Frontales</span></div>
+    <div class="product-item"><span class="product-title">Linternas de Camping</span></div>
+    <div class="product-item"><span class="product-title">Linternas Solares</span></div>
+    <div class="product-item"><span class="product-title">Linternas Llavero Pequeñas</span></div>
+    <div class="product-item"><span class="product-title">Linternas Tácticas Militares</span></div>
+    <div class="product-item"><span class="product-title">Bombillas LED de Repuesto</span></div>
+
+    <!-- ARTÍCULOS DE CAMPING -->
+    <div class="category-title" style="grid-column: 1 / -1;">⛺ ARTÍCULOS DE CAMPING</div>
+    <div class="product-item"><span class="product-title">Tiendas de Campaña</span></div>
+    <div class="product-item"><span class="product-title">Mochilas de Excursión</span></div>
+    <div class="product-item"><span class="product-title">Sacos de Dormir</span></div>
+    <div class="product-item"><span class="product-title">Colchonetas Inflables</span></div>
+    <div class="product-item"><span class="product-title">Termos y Botellas</span></div>
+    <div class="product-item"><span class="product-title">Cuerdas y Sogas</span></div>
+    <div class="product-item"><span class="product-title">Estacas y Clavos</span></div>
+    <div class="product-item"><span class="product-title">Linterna de Gas Portátil</span></div>
+
+    <!-- ACCESORIOS PARA EL HOGAR -->
+    <div class="category-title" style="grid-column: 1 / -1;">🏠 ACCESORIOS PARA EL HOGAR</div>
+    <div class="product-item"><span class="product-title">Ganchos y Tuercas</span></div>
+    <div class="product-item"><span class="product-title">Tarugos y Tacos de Pared</span></div>
+    <div class="product-item"><span class="product-title">Tornillos Variados</span></div>
+    <div class="product-item"><span class="product-title">Cordones y Cáñamo</span></div>
+    <div class="product-item"><span class="product-title">Cadenas y Eslabones</span></div>
+    <div class="product-item"><span class="product-title">Candados y Cerraduras</span></div>
+    <div class="product-item"><span class="product-title">Bisagras de Metal</span></div>
+    <div class="product-item"><span class="product-title">Pernos y Tuercas</span></div>
+
+    <!-- ARTÍCULOS DE VIAJE -->
+    <div class="category-title" style="grid-column: 1 / -1;">✈️ ARTÍCULOS DE VIAJE</div>
+    <div class="product-item"><span class="product-title">Maletas y Bolsas</span></div>
+    <div class="product-item"><span class="product-title">Organizadores de Viaje</span></div>
+    <div class="product-item"><span class="product-title">Mochilas de Día</span></div>
+    <div class="product-item"><span class="product-title">Fundas Protectoras</span></div>
+    <div class="product-item"><span class="product-title">Almohadas de Viaje</span></div>
+    <div class="product-item"><span class="product-title">Cinturones de Seguridad</span></div>
+    <div class="product-item"><span class="product-title">Adaptadores y Extensiones</span></div>
+    <div class="product-item"><span class="product-title">Etiquetas para Equipaje</span></div>
+
+    <!-- HERRAMIENTAS Y UTILIDADES -->
+    <div class="category-title" style="grid-column: 1 / -1;">🔧 HERRAMIENTAS Y UTILIDADES</div>
+    <div class="product-item"><span class="product-title">Cuchillos Multiusos</span></div>
+    <div class="product-item"><span class="product-title">Destornilladores Variados</span></div>
+    <div class="product-item"><span class="product-title">Alicates y Tenazas</span></div>
+    <div class="product-item"><span class="product-title">Martillos de Diferentes Tamaños</span></div>
+    <div class="product-item"><span class="product-title">Lijas y Abrasivos</span></div>
+    <div class="product-item"><span class="product-title">Brocas y Bits</span></div>
+    <div class="product-item"><span class="product-title">Cinta Métrica</span></div>
+    <div class="product-item"><span class="product-title">Nivel de Burbuja</span></div>
+
+    <!-- ACCESORIOS PERSONALES -->
+    <div class="category-title" style="grid-column: 1 / -1;">👜 ACCESORIOS PERSONALES</div>
+    <div class="product-item"><span class="product-title">Cinturones y Bandas</span></div>
+    <div class="product-item"><span class="product-title">Gorras y Sombreros</span></div>
+    <div class="product-item"><span class="product-title">Bufandas y Pañuelos</span></div>
+    <div class="product-item"><span class="product-title">Guantes Variados</span></div>
+    <div class="product-item"><span class="product-title">Calcetines Deportivos</span></div>
+    <div class="product-item"><span class="product-title">Mochilas Escolares</span></div>
+    <div class="product-item"><span class="product-title">Billeteras y Porta Documentos</span></div>
+    <div class="product-item"><span class="product-title">Llaveros y Accesorios</span></div>
+
+    <!-- ELECTRÓNICA Y ACCESORIOS -->
+    <div class="category-title" style="grid-column: 1 / -1;">📱 ELECTRÓNICA Y ACCESORIOS</div>
+    <div class="product-item"><span class="product-title">Cables USB y Cargadores</span></div>
+    <div class="product-item"><span class="product-title">Protectores de Pantalla</span></div>
+    <div class="product-item"><span class="product-title">Fundas para Celular</span></div>
+    <div class="product-item"><span class="product-title">Power Banks Portátiles</span></div>
+    <div class="product-item"><span class="product-title">Audífonos y Auriculares</span></div>
+    <div class="product-item"><span class="product-title">Extensores y Hubs USB</span></div>
+    <div class="product-item"><span class="product-title">Soportes para Dispositivos</span></div>
+    <div class="product-item"><span class="product-title">Filtros y Protectores</span></div>
+  </div>
+
+  <div class="cards-container">
+    <div class="card">
+      <span class="emoji">⭐</span>
+      <h3>Mejor Calidad</h3>
+      <p>Seleccionamos cuidadosamente cada producto para asegurar que recibas la mejor calidad en el mercado</p>
+    </div>
+
+    <div class="card">
+      <span class="emoji">💰</span>
+      <h3>Precios Competitivos</h3>
+      <p>Oferecemos los mejores precios sin comprometer la calidad de nuestros artículos</p>
+    </div>
+
+    <div class="card">
+      <span class="emoji">🚚</span>
+      <h3>Entrega Rápida</h3>
+      <p>Procesamos y enviamos tus pedidos con rapidez para que los recibas en el menor tiempo posible</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="why-us">
+  <h3>¿Por qué elegirnos?</h3>
+  <div class="why-us-content">
+    <div class="why-us-item">
+      <h4>✅ Garantía de Satisfacción</h4>
+      <p>Tu satisfacción es nuestra prioridad. Resolvemos cualquier inconveniente rápidamente</p>
+    </div>
+    <div class="why-us-item">
+      <h4>💬 Atención Personalizada</h4>
+      <p>Nuestro equipo está disponible para resolver tus dudas y ayudarte en tu compra</p>
+    </div>
+    <div class="why-us-item">
+      <h4>🔒 Compra Segura</h4>
+      <p>Tus datos y transacciones están protegidos con nosotros</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Lo que dicen nuestros clientes</h2>
+  
+  <div class="testimonials">
+    <div class="testimonial-item">
+      "Excelente variedad de productos y muy buenos precios. El envío fue rápido y el producto llegó en perfectas condiciones. ¡Muy recomendado!"
+    </div>
+    
+    <div class="testimonial-item">
+      "La calidad de los artículos es muy buena. Volveré a comprar con gusto. El trato fue excelente desde el primer momento."
+    </div>
+
+    <div class="testimonial-item">
+      "Gran selección de productos a precios justos. Definitivamente es mi tienda de referencia para accesorios y artículos variados."
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>¿Listo para encontrar lo que necesitas?</h2>
+  <p>Contáctanos hoy mismo y descubre nuestra amplia variedad de productos</p>
+  <a href="https://wa.me/573127767488?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20productos" class="btn">Envíame un Mensaje</a>
+</section>
+
+<footer>
+  <p>© 2026 Comercializadora Totus Tuus - Todos los derechos reservados</p>
+  <p>Ofrecemos productos de calidad a precios competitivos</p>
+  <div class="footer-contact">
+    <p>📱 WhatsApp: +57 312 776 7488</p>
+  </div>
+</footer>
+
+</body>
+</html>
